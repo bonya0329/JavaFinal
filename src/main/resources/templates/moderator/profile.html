@@ -1,0 +1,113 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	  layout:decorator="main/main.html">
+
+	<title layout:fragment="title">Moderator page</title>
+
+	<div layout:fragment = "contentPart" >
+		<section class="section-pagetop bg">
+			<div class="container" style="margin-top: 25px;">
+				<h2 class="title-page">Moderator page</h2>
+			</div>
+		</section>
+		<section class="section-margin--small mb-5" style="min-height:190vh">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<div >
+							<div class="filter-bar d-flex flex-wrap align-items-center" style="width: 270px;">
+								<div class="sorting">
+
+									<aside class="col-md-2">
+										<ul class="list-group">
+											<a class="list-group-item" style="width: 200px;" th:href="@{/moderatorProfile}">Profile page</a>
+											<a class="list-group-item" style="width: 200px;" th:href="@{/product/pageAddProduct}"> Add product </a>
+											<a class="list-group-item" style="width: 200px;" th:href="@{/category/pageAddCategory}"> Add category </a>
+											<a class="list-group-item" style="width: 200px;" th:href="@{/category/pageCategoriesList}"> Categories </a>
+											<a class="list-group-item" style="width: 200px;" th:href="@{/product/pageProductsList}"> Products </a>
+										</ul>
+									</aside>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div layout:fragment = "mainPart" class="col">
+					<div >
+						<div class="col-lg">
+							<div class="blog_right_sidebar">
+								<aside class="single_sidebar_widget author_widget">
+									<img class="author_img rounded-circle" src="images/r8.jpg" alt="">
+									<h4 >Bayan Akhmetova</h4>
+									<h4 >Tokzhan Bazarbayeva</h4>
+									<p>Senior blog writer</p>
+									<div class="social_icon">
+										<a href="#">
+											<i class="fab fa-facebook-f"></i>
+										</a>
+										<a href="#">
+											<i class="fab fa-twitter"></i>
+										</a>
+										<a href="#">
+											<i class="fab fa-github"></i>
+										</a>
+										<a href="#">
+											<i class="fab fa-behance"></i>
+										</a>
+									</div>
+									<p>Boot camps have its supporters andit sdetractors. Some people do not understand why you should
+										have to spend money on boot camp when you can get. Boot camps have itssuppor ters andits
+										detractors.
+									</p>
+									<div class="br"></div>
+								</aside>
+								<aside class="single_sidebar_widget popular_post_widget">
+									<h3 class="widget_title">Popular Posts</h3>
+									<div class="media post_item">
+										<img src="images/blog/popular-post/post1.jpg" alt="post">
+										<div class="media-body">
+											<a >
+												<h3>Space The Final Frontier</h3>
+											</a>
+											<p>02 Hours ago</p>
+										</div>
+									</div>
+									<div class="media post_item">
+										<img src="images/blog/popular-post/post2.jpg" alt="post">
+										<div class="media-body">
+											<a href="blog-details.html">
+												<h3>The Amazing Hubble</h3>
+											</a>
+											<p>02 Hours ago</p>
+										</div>
+									</div>
+									<div class="media post_item">
+										<img src="images/blog/popular-post/post3.jpg" alt="post">
+										<div class="media-body">
+											<a href="blog-details.html">
+												<h3>Astronomy Or Astrology</h3>
+											</a>
+											<p>03 Hours ago</p>
+										</div>
+									</div>
+									<div class="media post_item">
+										<img src="images/blog/popular-post/post4.jpg" alt="post">
+										<div class="media-body">
+											<a href="blog-details.html">
+												<h3>Asteroids telescope</h3>
+											</a>
+											<p>01 Hours ago</p>
+										</div>
+									</div>
+									<div class="br"></div>
+								</aside>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+</html>

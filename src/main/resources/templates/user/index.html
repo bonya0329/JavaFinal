@@ -1,0 +1,36 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	  layout:decorator="main/main.html">
+<title layout:fragment="title">Index</title>
+<div layout:fragment = "contentPart" >
+	<section class="section-margin calc-60px" style="min-height:140vh">
+		<div class="container">
+			<div class="section-intro pb-60px">
+				<p>Popular Item in the market</p>
+				<h2>Trending <span class="section-intro__style">Product</span></h2>
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-lg-4 col-xl-3" th:each="p : ${products}">
+					<div class="card text-center card-product">
+						<div class="card-product__img" ><a th:href="@{'/product/pageProduct/'+${p.getId()}}">
+							<img class="card-img" th:src="@{'/'+${p.getImagePath()}}" alt=""></a>
+							<ul class="card-product__imgOverlay">
+								<li><a th:href="@{'/product/pageProduct/'+${p.getId()}}"><button><i class="ti-search"></i></button></a></li>
+								<li><a th:href="@{'/product/pageProduct/'+${p.getId()}}"><button><i class="ti-shopping-cart"></i></button></a></li>
+								<li><a th:href="@{'/product/pageProduct/'+${p.getId()}}"><button><i class="ti-heart"></i></button></a></li>
+							</ul>
+						</div>
+						<div class="card-body">
+							<p th:text="${p.getCategory().getName()}"><a th:href="@{'/product/categoryProducts/'+${p.getCategory().getId()}}">Accessories</a></p>
+							<h4 class="card-product__title" th:text="${p.getName()}"><a th:href="@{'/product/pageProduct/'+${p.getId()}}">Quartz Belt Watch</a></h4>
+							<p class="card-product__price" th:text="${p.getPrice()}">$150.00</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+
+</html>

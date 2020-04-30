@@ -1,0 +1,28 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	  layout:decorator="moderator/profile.html">
+
+<title layout:fragment="title">Moderator profile/Edit category</title>
+
+<div layout:fragment = "mainPart" class="col">
+	<div class="filter-bar d-flex flex-wrap align-items-center">
+		<form th:action="@{/category/editCategoryName}" method="post">
+			<h5>Edit category</h5>
+			<input type="hidden" name="id" th:value="${category.getId()}">
+			<div class="form-group col-md-10">
+				<label>Name</label>
+				<div class="row">
+					<div class="col-md-8">
+						<input type="text" name="name" th:value="${category.getName()}" th:placeholder="${category.getName()}" class="form-control">
+					</div>
+					<div class="col-md-4">
+						<button type="submit" class="btn btn-primary">Save</button>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+</html>
